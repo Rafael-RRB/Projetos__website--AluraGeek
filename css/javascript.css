@@ -1,0 +1,9 @@
+.js__failure {
+  color: var(--color__failure);
+  border-color: var(--color__failure);
+}
+
+.js__success {
+  color: var(--color__success);
+  border-color: var(--color__success);
+}

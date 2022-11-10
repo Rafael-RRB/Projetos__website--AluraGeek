@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/generic.css">
+    <link rel="stylesheet" href="../css/header/header.css">
+    <link rel="stylesheet" href="../css/login/login.css">
+    <link rel="stylesheet" href="../css/novo_produto/novo_produto.css">
+    <link rel="stylesheet" href="../css/footer/footer.css">
+    <link rel="stylesheet" href="../css/javascript.css">
+    <link rel="apple-touch-icon" href="../img/favicon/simbolos__icones--touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../MANIFEST.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="msapplication-TileImage" content="../img/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-navbutton-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="alura">
+    <meta name="description" content="Pág alurageek">
+    <title>AluraGeek - Home</title>
+  </head>
+  
+  <body>
+    <script src="../js/producthandler/ProductCreator.js"></script>
+    <script src="../js/producthandler/ProductList.js"></script>
+    <script src="../js/producthandler/ProductHandler.js"></script>
+    <script src="../js/preload.js"></script>
+
+    <header class="cabecalho"></header>
+    <script src="../js/generate-header.js"></script>
+    
+    <main class="principal">
+      <section class="principal__login">
+        <h1 class="login__titulo">Adicionar novo produto</h1>
+        
+        <form action="" class="login__formulario">
+          <label class="formulario__container">
+            <p class="formulario__label">URL da imagem do produto</p>
+            <input type="text" class="formulario__campo" placeholder="https://ex.com/imagem.png" required>
+          </label>
+          
+          <label class="formulario__container">
+            <p class="formulario__label">Categoria do produto</p>
+            <input type="text" class="formulario__campo" placeholder="consoles" required>
+          </label>
+          
+          <label class="formulario__container">
+            <p class="formulario__label">Nome do produto</p>
+            <input type="text" class="formulario__campo" placeholder="ninstation box" required>
+          </label>
+
+          <label class="formulario__container">
+            <p class="formulario__label">Preço do produto</p>
+            <input type="number" min="0.99" max="9999.99" step="0.01" placeholder="123,45" class="formulario__campo" required>
+          </label>
+          
+          <label class="formulario__container">
+            <p class="formulario__label">Descrição do produto</p>
+            <textarea type="text" class="formulario__campo" required></textarea>
+          </label>
+          
+          <button id="buttonAdd" class="formulario__botao generic__button">Criar</button>
+        </form>
+      </section>
+    </main>
+    
+    <footer class="rodape"></footer>
+    <script src="../js/generate-footer.js"></script>
+    <script src="../js/novo_produto.js"></script>
+  </body>
+</html>

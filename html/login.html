@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/generic.css">
+    <link rel="stylesheet" href="../css/header/header.css">
+    <link rel="stylesheet" href="../css/login/login.css">
+    <link rel="stylesheet" href="../css/footer/footer.css">
+    <link rel="stylesheet" href="../css/javascript.css">
+    <link rel="apple-touch-icon" href="../img/favicon/simbolos__icones--touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../MANIFEST.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="msapplication-TileImage" content="../img/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-navbutton-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="alura">
+    <meta name="description" content="Pág alurageek">
+    <title>AluraGeek - Home</title>
+  </head>
+  
+  <body>
+    <script src="../js/loginhandler/LoginList.js"></script>
+    <script src="../js/loginhandler/LoginCreator.js"></script>
+    <script src="../js/loginhandler/LoginHandler.js"></script>
+    <script src="../js/preload.js"></script>
+
+    <header class="cabecalho"></header>
+    <script src="../js/generate-header.js"></script>
+    
+    <main class="principal">
+      <section class="principal__login">
+        <form action="" class="login__formulario">
+          <h1 class="login__titulo">Iniciar sessão</h1>
+          
+          <label class="formulario__container">
+            <p class="formulario__label">Digite seu e-mail</p>
+            <input type="email" class="formulario__campo" autocomplete="email" required>
+          </label>
+          
+          <label class="formulario__container">
+            <p class="formulario__label">Digite sua senha</p>
+            <input type="password" class="formulario__campo" autocomplete="current-password" required>
+          </label>
+        
+          <button class="formulario__botao generic__button">Entrar</button>
+        </form>
+
+        <form action="" class="login__formulario">
+          <h2 class="login__titulo">...ou criar uma nova conta</h2>
+
+          <label class="formulario__container">
+            <p class="formulario__label">Digite seu e-mail</p>
+            <input type="email" class="formulario__campo" autocomplete="email" required>
+          </label>
+          
+          <label class="formulario__container">
+            <p class="formulario__label">Digite sua senha</p>
+            <input type="password" class="formulario__campo" autocomplete="current-password" required>
+          </label>
+
+          <label class="formulario__container">
+            <p class="formulario__label">Confirme sua senha</p>
+            <input type="password" class="formulario__campo" autocomplete="current-password" required>
+          </label>
+          
+          <button class="formulario__botao generic__button">Criar conta</button>
+        </form>
+      </section>
+    </main>
+    
+    <footer class="rodape">
+      
+    </footer>
+    <script src="../js/generate-footer.js"></script>
+    <script src="../js/login.js"></script>
+  </body>
+</html>
