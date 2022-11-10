@@ -1,3 +1,6 @@
+if(!(/\/index\.html$/i).test(window.location.href)) {
+  window.location.href = "../index.html";
+};
 const main = $("main");
 const productViewArray = new productView(productListArray);
 function indexSectionGenerator(array, category) {
