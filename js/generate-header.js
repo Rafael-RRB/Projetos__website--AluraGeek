@@ -15,7 +15,15 @@ $('.cabecalho').innerHTML = `
   <input type="text" class="pesquisa-container__input" placeholder="O que deseja encontrar?">
 </label>
 
-<a href="${concatHref[1]+"login.html"}" class="cabecalho__login">login</a>
+${(() => {
+  console.log(JSON.parse(sessionStorage.getItem("login")).login === true);
+  if(JSON.parse(sessionStorage.getItem("login")).login === true) {
+    return `<a href="${concatHref[1]+"novo_produto.html"}" class="cabecalho__login">novo produto</a>`
+  } else {
+    return `<a href="${concatHref[1]+"login.html"}" class="cabecalho__login">login</a>`
+  }
+})()}
+
 
 <button class="cabecalho__pesquisa--mobile"></button>
 `;

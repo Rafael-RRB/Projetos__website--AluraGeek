@@ -15,10 +15,6 @@ class productView {
             repeat[categories.indexOf(this._array._productList[i]._category)] = 1;
           }
         }
-        console.log("PART 1");
-        console.log(categoriesArray);
-        console.log(categories);
-        console.log(repeat);
         // Remove as categorias inválidas
         for(var i = 0; i < categories.length; i++) {
           if(repeat[i] < 6) {
@@ -27,21 +23,8 @@ class productView {
             i--;
           }
         }
-        console.log("PART 2");
-        console.log(categoriesArray);
-        console.log(categories);
-        console.log(repeat);
         // Escolhe 3 categorias aleatórias das que sobraram
         categories = this.randomArray(categories, 3);
-        console.log("PART 3");
-        console.log(categoriesArray);
-        console.log(categories);
-        console.log(repeat);
-        console.log("PART 4 PRE");
-        console.log(this._array._productList[0]._category);
-        console.log(categories[0].includes(this._array._productList[0]._category));
-        console.log(categories[1].includes(this._array._productList[0]._category));
-        console.log(categories[2].includes(this._array._productList[0]._category));
         // Empurra os itens das categorias
         for(let i = 0; i < this._array._productList.length; i++) {
           switch(true) {
@@ -56,10 +39,6 @@ class productView {
               break;
           }
         }
-        console.log("PART 3");
-        console.log(categoriesArray);
-        console.log(categories);
-        console.log(repeat);
       })();      
       return [this.randomArray(categoriesArray[0], 6), this.randomArray(categoriesArray[1], 6), this.randomArray(categoriesArray[2], 6)];
     })();

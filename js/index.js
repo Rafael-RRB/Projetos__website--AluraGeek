@@ -9,7 +9,7 @@ function indexSectionGenerator(array, category) {
     for(let i = 0; i < 6; i++) {
       htmlCards.push(
       `
-      <a href="#" class="container__cartao">
+      <a href="html/produto.html" class="container__cartao">
         <img ${array._categoryList[category][i]._img} class="cartao__imagem">
 
         <div class="cartao__descricao">
@@ -26,6 +26,7 @@ function indexSectionGenerator(array, category) {
 }
 
 function indexMainGenerator(productArray) {
+  sessionStorage.setItem("productOrderList", JSON.stringify(productArray._categoryList));
   let productViewIndex = [indexSectionGenerator(productArray, 0), indexSectionGenerator(productArray, 1), indexSectionGenerator(productArray, 2)];
   for(let i = 0; i < 3; i++) {
     let mainSection = document.createElement("section");
@@ -45,3 +46,32 @@ function indexMainGenerator(productArray) {
 }
 
 indexMainGenerator(productViewArray);
+
+// Link para a página com descrição
+let indexCards = $$(".container__cartao");
+let indexProductList = JSON.parse(sessionStorage.getItem("productOrderList"));
+for(let i = 0; i < 18; i++) {
+  indexCards[i].addEventListener("click", event => {
+    var indexProductListSlice = [];
+    switch(true) {
+      case(i > 11):
+        sessionStorage.setItem("productOrderCurrent", JSON.stringify(indexProductList[2][(i-12)]));
+        indexProductListSlice = JSON.parse(JSON.stringify(indexProductList[0]));
+        indexProductListSlice.splice(i-12, 1);
+        sessionStorage.setItem("productOrderCategoryList", JSON.stringify(indexProductListSlice));
+        break;
+      case(i > 5):
+        sessionStorage.setItem("productOrderCurrent", JSON.stringify(indexProductList[1][(i-6)]));
+        indexProductListSlice = JSON.parse(JSON.stringify(indexProductList[0]));
+        indexProductListSlice.splice(i-6, 1);
+        sessionStorage.setItem("productOrderCategoryList", JSON.stringify(indexProductListSlice));
+        break;
+      default:
+        sessionStorage.setItem("productOrderCurrent", JSON.stringify(indexProductList[0][i]));
+        indexProductListSlice = JSON.parse(JSON.stringify(indexProductList[0]));
+        indexProductListSlice.splice(i, 1);
+        sessionStorage.setItem("productOrderCategoryList", JSON.stringify(indexProductListSlice));
+        break;
+    }
+  });
+}
