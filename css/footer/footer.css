@@ -69,7 +69,7 @@
     .formulario__container, .formulario__mensagem {
       width: 100%;
       background-color: var(--color__background--header);
-      color: var(--color__font--form);
+      color: var(--color__font--default);
       margin-bottom: 2rem;
       border-radius: .5rem;
       border: none;

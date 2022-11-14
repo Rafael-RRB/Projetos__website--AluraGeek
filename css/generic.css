@@ -60,6 +60,7 @@ textarea {
 
 html {
   font-family: 'Raleway-Regular', serif;
+  font-display: swap;
   font-size: 10px;
   font-weight: 400;
   font-style: normal;
@@ -86,7 +87,11 @@ html {
     border-color: #000;
   }
 
-
+.hide-text {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
 
 @media screen and (min-width:428px) {
 

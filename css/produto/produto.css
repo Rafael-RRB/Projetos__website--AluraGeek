@@ -6,8 +6,8 @@
 }
 
   .produto__imagem {
-    width: 100%;
-    height: 66.67vw;
+    width: 100vw;
+    height: 100vw;
     background-color: red;
   }
 
@@ -116,7 +116,7 @@
     align-items: center;
     justify-content: flex-start;
     width: auto;
-    padding: 0rem 1.5rem 0rem 0rem;
+    padding: 0rem;
     margin: 3rem 3rem 4rem 3rem;
   }
   
@@ -127,7 +127,7 @@
   
     .produto__texto {
       width: 66.67%;
-      padding: 2.5rem 0rem 2rem 1.5rem;
+      padding: 2rem;
     }
   
       .produto__titulo, .produto__preco, .produto__descricao {
@@ -186,7 +186,7 @@
   
     .produto__texto {
       width: 60%;
-      padding: 0rem 1.5rem;
+      padding: 3rem;
     }
   
       .produto__titulo, .produto__preco, .produto__descricao {
@@ -204,19 +204,22 @@
 .principal__similares {}
 
   .similares__cartoes {
-    padding: 0rem 1.5rem;
+    width: 80%;
+    margin: auto;
+    padding: 0;
+    justify-content: space-between;
   }
 
     .similares__titulo {
-      padding: 3rem;
+      padding: 3rem 0rem 3rem 10%;
     }
 
     .container__cartao {
-      width: calc(33.333% - 2rem);
+      width: 18.75%;
     }
       
       .cartao__imagem {
-        height: calc(33.333vw - 4rem);
+        height: 15vw
       }
 
       .cartao__descricao {}

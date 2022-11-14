@@ -9,21 +9,29 @@ que quaisquer pessoas que analisarem meu trabalho entendam.
 */
 
 $('.cabecalho').innerHTML = `
-<a href="${concatHref[0]+"index.html"}" class="cabecalho__logomarca"></a>
+<a href="${concatHref[0]+"index.html"}" class="cabecalho__logomarca">
+  <span class="hide-text">link para home</span>
+</a>
 
 <label class="cabecalho__pesquisa-container">
   <input type="text" class="pesquisa-container__input" placeholder="O que deseja encontrar?">
 </label>
 
 ${(() => {
-  console.log(JSON.parse(sessionStorage.getItem("login")).login === true);
-  if(JSON.parse(sessionStorage.getItem("login")).login === true) {
-    return `<a href="${concatHref[1]+"novo_produto.html"}" class="cabecalho__login">novo produto</a>`
+  if(!(JSON.parse(sessionStorage.getItem("login")) === null)) {
+    if(JSON.parse(sessionStorage.getItem("login")).login === true) {
+      return `<a href="${concatHref[1]+"novo_produto.html"}" class="cabecalho__login">novo produto</a>`
+    } else {
+      return `<a href="${concatHref[1]+"login.html"}" class="cabecalho__login">login</a>`
+    }
   } else {
     return `<a href="${concatHref[1]+"login.html"}" class="cabecalho__login">login</a>`
   }
+    
 })()}
 
 
-<button class="cabecalho__pesquisa--mobile"></button>
+<nav class="cabecalho__pesquisa--mobile">
+  <span class="hide-text">pesquisar</span>
+</nav>
 `;

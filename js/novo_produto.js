@@ -1,3 +1,9 @@
+if(JSON.parse(sessionStorage.getItem("login")) === null) {
+  window.location.replace("../index.html");
+} else if(!(JSON.parse(sessionStorage.getItem("login")).login === true)) {
+  window.location.replace("../index.html");
+}
+
 const messagesDefault = [
   "URL da imagem do produto",
   "Categoria do produto",

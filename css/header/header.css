@@ -64,6 +64,8 @@
     }
 
   .cabecalho__pesquisa--mobile {
+    min-width: 50px;
+    min-height: 50px;
     padding: 0rem;
     margin: 0rem;
     border: none;

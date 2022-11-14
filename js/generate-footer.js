@@ -11,7 +11,9 @@ que quaisquer pessoas que analisarem meu trabalho entendam.
 $('.rodape').innerHTML = `
   <section class="rodape__secao">
     <nav class="secao__navegacao">
-      <a href="${concatHref[0]+"index.html"}" class="secao__logomarca"></a>
+      <a href="${concatHref[0]+"index.html"}" class="secao__logomarca">
+        <span class="hide-text">link para home</span>
+      </a>
       <ul class="secao__lista">
         <li class="lista__item">
           <a href="${concatHref[1]+"sobre.html"}" class="secao__link">Quem somos nós</a></li>

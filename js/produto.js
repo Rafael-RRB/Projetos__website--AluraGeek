@@ -1,6 +1,5 @@
 const sessionStorageProduct = JSON.parse(sessionStorage.getItem("productOrderCurrent"));
 const sessionStorageCategory = JSON.parse(sessionStorage.getItem("productOrderCategoryList"));
-console.log(sessionStorageCategory);
 
 const mainProductImg = $(".principal__produto>img");
 const mainProductTitle = $(".produto__texto>h1");
@@ -37,8 +36,42 @@ function generateCards() {
     </a>
     `);
   }
-  console.log(htmlProductCards);
   return '<section class="principal__similares"><h2 class="similares__titulo">Produtos similares</h2><section class="similares__cartoes">' + htmlProductCards.join(" ") + '</section></section>';
 }
 // Insere o HTML
 $("main").innerHTML = generateProduct() + generateCards();
+
+// Link para a página com descrição
+const currentProductCat = sessionStorageProduct._category;
+const currentProductList = (() => {
+  let productList = JSON.parse(sessionStorage.getItem("productOrderList"));
+  for(let i = 0; i < 3; i++) {
+    if(productList[i][0]._category === currentProductCat) {
+      return productList[i];
+    }
+  }
+})();
+
+let indexCards = $$(".container__cartao");
+let indexProductList = JSON.parse(sessionStorage.getItem("productOrderList"));
+
+console.log(JSON.parse(sessionStorage.getItem("productOrderCurrent")));
+console.log(JSON.parse(sessionStorage.getItem("productOrderCategoryList")));
+
+
+for(let cCard = 0; cCard < 5; cCard++) {
+  indexCards[cCard].addEventListener("click", event => {
+    var currentProductStringify = JSON.stringify(sessionStorageCategory[cCard]);
+    sessionStorage.setItem("productOrderCurrent", currentProductStringify);
+    for(let i = 0; i < currentProductList.length; i++) {
+      if(currentProductStringify === JSON.stringify(currentProductList[i])) {
+        let indexProductListSlice = JSON.parse(JSON.stringify(currentProductList));
+        indexProductListSlice.splice(i, 1);
+        sessionStorage.setItem("productOrderCategoryList", JSON.stringify(indexProductListSlice));
+      }
+    }
+    history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+    location.reload();
+  });
+}
