@@ -1,5 +1,9 @@
 console.log('preload.js loaded succesfully.');
 
+if(!(sessionStorage.getItem("editProduct") === null) && !(/\/novo_produto\.html$/).test(window.location.href)) {
+  sessionStorage.removeItem("editProduct");
+}
+
 /* Declarações */
 // HREF da página atual
 const hrefDocument = window.location.href;
@@ -8,6 +12,7 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const regexHREF = new RegExp([
   "\/index\.html$",
+  "\/lista_produtos\.html$",
   "\/novo_produto\.html$"].join("|"), "i");
 const regexHREFLogin = /\/login\.html$/;
 // Variável para alterar o SRC dos Anchors do cabeçalho e rodapé

@@ -4,6 +4,8 @@ if(JSON.parse(sessionStorage.getItem("login")) === null) {
   window.location.replace("../index.html");
 }
 
+
+
 const messagesDefault = [
   "URL da imagem do produto",
   "Categoria do produto",
@@ -48,9 +50,23 @@ for(let i = 0; i < 5; i++) {
   inputListStatus.push(0);
 }
 
+// Mudanças caso esteja no modo edição
+if(!(sessionStorage.getItem("editProduct") === null)) {
+  var editProduct = JSON.parse(sessionStorage.getItem("editProduct"));
+  if(editProduct.edit) {
+    let product = productListArray._productList[editProduct.index];
+    console.log(product);
+    $(".login__titulo").innerText = "Editando o produto";
+    inputList[0].value = product._img;
+    inputList[1].value = product._category;
+    inputList[2].value = product._name;
+    inputList[3].value = parseInt(product._price);
+    inputList[4].value = product._description;
+  }
+}
+
 // Testes
   
-
   // Inputs
   // URL da imagem
   inputList[0].addEventListener("focusout", () => {
@@ -154,16 +170,35 @@ buttonAdd.addEventListener("click", (event) => {
   if(inputListStatus.includes(0)) {
     alert("Os campos não foram preenchidos corretamente!");
   } else {
-    let values = (() => {
-      var inputs = $("form").querySelectorAll("label>input,label>textarea");
-      var results = [];
-      for(let i = 0; i < inputs.length; i++) {
-        results[i] = inputs[i].value;
-      }
-      return results;
-    })();
-    new productHandler(values[0], values[1], values[2], values[3], values[4]);
-    clearForm(formNovoProduto, messagesDefault);
-    console.log(productListArray);
+    if(editProduct.edit) {
+      let values = (() => {
+        var inputs = $("form").querySelectorAll("label>input,label>textarea");
+        var results = [];
+        for(let i = 0; i < inputs.length; i++) {
+          results[i] = inputs[i].value;
+        }
+        return results;
+      })();
+      let productTarget = productListArray._productList[(JSON.parse(sessionStorage.getItem("editProduct")).index)];
+      productTarget._img = values[0];
+      productTarget._category = values[1];
+      productTarget._name = values[2];
+      productTarget._price = values[3];
+      productTarget._description = values[4];
+      clearForm(formNovoProduto, messagesDefault);
+      sessionStorage.removeItem("editProduct");
+      window.location.href = "../html/lista_produtos.html";
+    } else {
+      let values = (() => {
+        var inputs = $("form").querySelectorAll("label>input,label>textarea");
+        var results = [];
+        for(let i = 0; i < inputs.length; i++) {
+          results[i] = inputs[i].value;
+        }
+        return results;
+      })();
+      new productHandler(values[0], values[1], values[2], values[3], values[4]);
+      clearForm(formNovoProduto, messagesDefault);
+    }
   }
 });

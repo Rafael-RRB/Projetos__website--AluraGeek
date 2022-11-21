@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/generic.css">
+    <link rel="stylesheet" href="../css/header/header.css">
+    <link rel="stylesheet" href="../css/lista_produtos/lista_produtos.css">
+    <link rel="stylesheet" href="../css/footer/footer.css">
+    <link rel="stylesheet" href="../css/javascript.css">
+    <link rel="apple-touch-icon" href="../img/favicon/simbolos__icones--touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../MANIFEST.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="msapplication-TileImage" content="../img/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-navbutton-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="alura">
+    <meta name="description" content="Pág alurageek">
+    <title>AluraGeek - Home</title>
+  </head>
+  
+  <body>
+    <script src="../js/producthandler/ProductCreator.js"></script>
+    <script src="../js/producthandler/ProductHandler.js"></script>
+    <script src="../js/producthandler/ProductList.js"></script>
+    <script src="../js/producthandler/ProductView.js"></script>
+    <script src="../js/preload.js"></script>
+
+    <header class="cabecalho"></header>
+    <script src="../js/generate-header.js"></script>
+    
+    <main class="principal">
+      <section class="principal__heading">
+        <h1 class="heading__titulo">Todos os produtos</h1>
+        <a class="heading__botao generic__button" href="novo_produto.html">Adicionar produto</a>
+      </section>
+
+      <section class="principal__lista-cartao">
+        <article class="lista-cartoes__cartao">
+          <div class="cartao__imagem">
+            <a href="#" class="imagem__editar"></a>
+            <a href="#" class="imagem__deletar"></a>
+          </div>
+  
+          <a href="#" class="cartao__descricao">
+            <h2 class="descricao__titulo">Título</h2>
+            <p class="descricao__preco">R$42,00</p>
+            <p class="descricao__link">Ver produto</p>
+          </a>
+        </article>
+
+        <article class="lista-cartoes__cartao">
+          <div class="cartao__imagem">
+            <a href="#" class="imagem__editar"></a>
+            <a href="#" class="imagem__deletar"></a>
+          </div>
+  
+          <a href="#" class="cartao__descricao">
+            <h2 class="descricao__titulo">Título</h2>
+            <p class="descricao__preco">R$42,00</p>
+            <p class="descricao__link">Ver produto</p>
+          </a>
+        </article>
+      </section>
+    </main>
+    
+    <footer class="rodape">
+      
+    </footer>
+    <script src="../js/generate-footer.js"></script>
+    <script src="../js/lista_produtos.js"></script>
+  </body>
+</html>

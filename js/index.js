@@ -1,5 +1,5 @@
 if(!(/\/index\.html$/i).test(window.location.href)) {
-  window.location.href = "../index.html";
+  window.location.href += "index.html";
 };
 const main = $("main");
 const productViewArray = new productView(productListArray);
@@ -35,7 +35,7 @@ function indexMainGenerator(productArray) {
     <section class="principal__secoes">
       <div class="secoes__header">
         <h2 class="secoes__titulo">${productArray._categoryList[i][0]._category}</h2>
-        <a href="" class="secoes__link">Ver tudo</a>
+        <a href="../html/lista_produtos.html" class="secoes__link">Ver tudo</a>
       </div>
 
       <section class="secoes__container">${productViewIndex[i]}</section>
