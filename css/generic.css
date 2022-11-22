@@ -36,6 +36,7 @@
   --border__link: .1rem solid #1d5b91;
   --transition__default: all 200ms;
   --boxshadow__equal: 0px 0px 1rem .1rem var(--color__boxshadow--default);
+  --boxshadow__down: 0px .25rem .4rem 0rem var(--color__boxshadow--default);
   --boxshadow__form: 0px .2rem 0rem 0rem var(--color__boxshadow--default);
 }
 
@@ -87,9 +88,13 @@ html {
   }
 
 .hide-text {
-  height: 0;
-  width: 0;
-  opacity: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 @media screen and (min-width:428px) {

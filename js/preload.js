@@ -27,6 +27,7 @@ if(!/\b\/index\.html\b/.test(hrefDocument)) {
 function clearLocalStorage() {
   localStorage.clear();
   sessionStorage.clear();
+  window.location.href = "../html/index.html";
 }
 // Adiciona a classes "falha" e "sucesso" em formulários
 function classResult(target, result) {

@@ -39,14 +39,21 @@
       margin: 0;
     }
 
-      .imagem__editar {
-        background: transparent url(../../img/ui/main/edit.svg) no-repeat center / 90%;
+      .imagem__editar:hover, .imagem__deletar:hover, .imagem__editar:focus-within, .imagem__deletar:focus-within {
+        filter: brightness(.8);
       }
+      
+        .imagem__editar {
+          background: transparent url(../../img/ui/main/edit.svg) no-repeat center / 90%;
+          transition: var(--transition__default);
+        }
 
-      .imagem__deletar {
-        background: transparent url(../../img/ui/main/delete.svg) no-repeat center / 90%;
-        border: none;
-      }
+        .imagem__deletar {
+          background: transparent url(../../img/ui/main/delete.svg) no-repeat center / 90%;
+          border: none;
+          cursor: pointer;
+          transition: var(--transition__default);
+        }
 
     .cartao__descricao {
       display: flex;
@@ -89,3 +96,113 @@
           padding: 0.75rem 1.5em .75rem 0rem;
           margin: 0rem;
         }
+
+@media screen and (min-width:428px) {
+
+}
+
+@media screen and (min-width:728px) {
+  .principal__heading {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 3rem 0rem 3rem;
+  }
+  
+    .heading__titulo {
+      font-size: 3.6rem;
+    }
+  
+    .heading__botao {}
+  
+  .principal__lista-cartao {
+    padding: 0rem 3rem;
+    justify-content: space-between;
+  }
+  
+    .lista-cartoes__cartao {
+      width: calc(33.333% - 2rem);
+    }
+  
+      .cartao__imagem {
+        height: calc(33.333vw - 4rem);
+      }
+  
+        .imagem__editar {
+          width: 5.5rem;
+          height: 5.5rem;
+        }
+  
+        .imagem__deletar {
+          width: 5.5rem;
+          height: 5.5rem;
+        }
+  
+      .cartao__descricao {}
+  
+        .descricao__titulo,
+        .descricao__preco,
+        .descricao__link {}
+  
+          .descricao__titulo {}
+  
+          .descricao__preco {}
+  
+          .descricao__link {}
+}
+
+@media screen and (min-width:1024px) {
+
+}
+
+@media screen and (min-width:1280px) {
+  .principal__heading {
+    padding: 2rem 8.4% 0rem 8.4%;
+  }
+  
+    .heading__titulo {
+      font-size: 4.8rem;
+    }
+  
+    .heading__botao {}
+  
+  .principal__lista-cartao {
+    padding: 0rem 8.4%;
+    justify-content: center;
+  }
+  
+    .lista-cartoes__cartao {
+      width: 15%;
+      margin: 0 .833%;
+    }
+  
+      .cartao__imagem {
+        height: 12.48vw;
+      }
+  
+        .imagem__editar {
+          width: 5rem;
+          height: 5rem;
+        }
+  
+        .imagem__deletar {
+          width: 5rem;
+          height: 5rem;
+        }
+  
+      .cartao__descricao {}
+  
+        .descricao__titulo,
+        .descricao__preco,
+        .descricao__link {}
+  
+          .descricao__titulo {}
+  
+          .descricao__preco {}
+  
+          .descricao__link {}
+}
+
+@media screen and (min-width:1920px) {
+
+}

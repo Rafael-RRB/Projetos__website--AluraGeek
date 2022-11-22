@@ -72,6 +72,42 @@
     background: transparent url(../../img/ui/header/search--off.svg) no-repeat center / 75%;
   }
 
+    .mobile__pesquisa {
+      display: none;
+      justify-content: space-between;
+      position: fixed;
+      top: 7rem;
+      background-color: var(--color__background--header);
+      width: 100%;
+      height: 5rem;
+      outline: none;
+      box-shadow: var(--boxshadow__down);
+      transition: all, 200ms;        
+    }
+
+      .pesquisa__label {
+        width: 100%;
+        justify-content: center;
+      }
+
+        .label__campo {
+          background: transparent url(../../img/ui/main/arrow__right.svg) no-repeat 1rem center / 1.5rem;
+          border: none;
+          font-size: 1.4rem;
+          padding: 0rem 3.5rem;
+          width: 100%;
+          height: 2em;
+          box-sizing: border-box;
+        }
+
+      .pesquisa__botao {
+        width: fit-content;
+        min-height: 0;
+        font-size: 2rem;
+        padding: 0rem 2rem;
+        transition: all, 200ms;
+      }
+
 @media screen and (min-width:428px) {
   .cabecalho {}
   

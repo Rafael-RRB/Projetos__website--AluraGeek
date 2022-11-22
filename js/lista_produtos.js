@@ -9,11 +9,15 @@ productListMain.innerHTML = (() => {
     <article class="lista-cartoes__cartao">
       <div class="cartao__imagem">
         ${(() => {
-          if(JSON.parse(sessionStorage.getItem("login")).login === true) {
-            return `
-            <button href="#" class="imagem__deletar"></button>
-            <a href="#" class="imagem__editar"></a>
-            `
+          if(!(JSON.parse(sessionStorage.getItem("login")) === null)) {
+            if(JSON.parse(sessionStorage.getItem("login")).login === true) {
+              return `
+              <button href="#" class="imagem__deletar"></button>
+              <a href="#" class="imagem__editar"></a>
+              `
+            }
+          } else {
+            return ``;
           }
         })()}
       </div>
@@ -32,10 +36,16 @@ productListMain.innerHTML = (() => {
 // Adiciona a imagem no cartão
 let htmlCardList = $$(".lista-cartoes__cartao>.cartao__imagem");
 for(let i = 0; i < htmlCardList.length; i++) {
-  htmlCardList[i].style.backgroundImage = `url(${(() => {
-    return `../${productListArray._productList[i]._img.match(/src="([^"]+)/)[1]})`;
-  })()}`;
-};
+  if((/http/g).test(productListArray._productList[i]._img)) {
+    htmlCardList[i].style.backgroundImage = `url(${(() => {
+      return `${productListArray._productList[i]._img.match(/src="([^"]+)/)[1]})`;
+    })()}`
+  } else {
+    htmlCardList[i].style.backgroundImage = `url(${(() => {
+      return `../${productListArray._productList[i]._img.match(/src="([^"]+)/)[1]})`;
+    })()}`
+  }
+}
 
 // Condicionais
 function productDeleteCond() {
@@ -67,7 +77,7 @@ function productDeleteCond() {
         sum += 1;
       }
     }
-    return sum > 2 ? true : false;
+    return sum < 3 ? true : false;
   })();
 
   switch(true) {
@@ -128,9 +138,6 @@ for(let i = 0; i < linkViewProduct.length; i++) {
     productListArrayClone.splice(i, 1);
     let productArray = [];
     sessionStorage.setItem("productOrderCurrent", JSON.stringify(productListArray._productList[i]));
-    console.log(productCategory);
-    console.log(productListArrayClone[0]._category);
-    console.log(productCategory === productListArrayClone[i]._category);
     for(let i2 = 0; i2 < productListArrayClone.length; i2++) {
       if(productCategory === productListArrayClone[i2]._category) {
         productArray.push(productListArrayClone[i2]);

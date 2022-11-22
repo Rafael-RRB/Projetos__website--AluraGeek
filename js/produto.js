@@ -75,3 +75,4 @@ for(let cCard = 0; cCard < 5; cCard++) {
     location.reload();
   });
 }
+

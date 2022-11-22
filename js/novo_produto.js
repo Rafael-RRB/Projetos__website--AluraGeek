@@ -1,6 +1,8 @@
 if(JSON.parse(sessionStorage.getItem("login")) === null) {
+  alert("Você não está autorizado a acessar esta página.");
   window.location.replace("../index.html");
 } else if(!(JSON.parse(sessionStorage.getItem("login")).login === true)) {
+  alert("Você não está autorizado a acessar esta página.");
   window.location.replace("../index.html");
 }
 
@@ -63,6 +65,8 @@ if(!(sessionStorage.getItem("editProduct") === null)) {
     inputList[3].value = parseInt(product._price);
     inputList[4].value = product._description;
   }
+} else {
+  var editProduct = {edit: false, index: -1};
 }
 
 // Testes
@@ -179,12 +183,7 @@ buttonAdd.addEventListener("click", (event) => {
         }
         return results;
       })();
-      let productTarget = productListArray._productList[(JSON.parse(sessionStorage.getItem("editProduct")).index)];
-      productTarget._img = values[0];
-      productTarget._category = values[1];
-      productTarget._name = values[2];
-      productTarget._price = values[3];
-      productTarget._description = values[4];
+      new productHandler(values[0], values[1], values[2], values[3], values[4], 1, editProduct.index);
       clearForm(formNovoProduto, messagesDefault);
       sessionStorage.removeItem("editProduct");
       window.location.href = "../html/lista_produtos.html";
@@ -197,7 +196,8 @@ buttonAdd.addEventListener("click", (event) => {
         }
         return results;
       })();
-      new productHandler(values[0], values[1], values[2], values[3], values[4]);
+      console.log(values[4]);
+      new productHandler(values[0], values[1], values[2], values[3], values[4], 0, editProduct.index);
       clearForm(formNovoProduto, messagesDefault);
     }
   }

@@ -7,3 +7,18 @@
   color: var(--color__success);
   border-color: var(--color__success);
 }
+
+.js__hide {
+  display: none;
+}
+
+.js__display--flex {
+  display: flex;
+}
+
+.js__animation--searchfield {
+  display: flex;
+  min-height: 0;
+  height: 0;
+  opacity: 0;
+}

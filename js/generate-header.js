@@ -30,8 +30,99 @@ ${(() => {
     
 })()}
 
-
-<nav class="cabecalho__pesquisa--mobile">
+<button class="cabecalho__pesquisa--mobile">
   <span class="hide-text">pesquisar</span>
-</nav>
+</button>
+
+<div class="mobile__pesquisa">
+  <label class="pesquisa__label">
+      <input type="text" class="label__campo" placeholder="O que deseja encontrar?">
+  </label>
+
+  <button class="pesquisa__botao generic__button">></button>
+</div>
 `;
+
+// Barra de pesquisa mobile
+const mobileSearchButton = $("header>button");
+const mobileSearchInput = $(".label__campo");
+const searchfield = $(".mobile__pesquisa");
+const searchButton = $(".pesquisa__botao");
+mobileSearchButton.addEventListener("click", event => {
+  // Animação
+  if(searchfield.classList.contains("js__display--flex")) {
+    searchfield.classList.add("js__animation--searchfield");
+    searchButton.classList.add("js__animation--searchfield");
+    setTimeout(() => {
+      searchfield.classList.remove("js__display--flex");
+      searchfield.classList.remove("js__animation--searchfield");
+      searchButton.classList.remove("js__animation--searchfield");
+    }, 100);
+  } else {
+    searchfield.classList.add("js__animation--searchfield");
+    searchButton.classList.add("js__animation--searchfield");
+    searchfield.classList.add("js__display--flex");
+    setTimeout(() => {
+      searchfield.classList.remove("js__animation--searchfield");
+      searchButton.classList.remove("js__animation--searchfield");
+    }, 100);
+  }
+  
+});
+
+function searchInput() {
+  // Pesquisa
+  switch(true) {
+    case(mobileSearchInput.value === ""):
+      alert("Você não inseriu nada...");
+      break;
+    case(searchHome.includes(translateString(mobileSearchInput.value))):
+      window.location.href = "../index.html";
+      break;
+    case(searchLogin.includes(translateString(mobileSearchInput.value))):
+      window.location.href = "../html/login.html";  
+      break;
+    case(searchNovoProduto.includes(translateString(mobileSearchInput.value))):
+      window.location.href = "../html/novo_produto.html";  
+      break;
+    case(searchListaProduto.includes(translateString(mobileSearchInput.value))):
+      window.location.href = "../html/lista_produtos.html";  
+      break;
+    case(searchProduto.includes(translateString(mobileSearchInput.value))):
+      //window.location.href = "../html/produto.html";  
+      break;
+    default:
+      alert("Nenhum resultado foi encontrado. Por favor, tente novamente.");
+  }
+}
+
+searchButton.addEventListener("click", searchInput);
+mobileSearchInput.addEventListener("keyup", event => {
+  if(event.key === "Enter") {
+    searchInput();
+  }
+});
+
+function translateString(string) {
+  string = string.toLocaleLowerCase();
+  string = string.replace(/а|ạ|ą|ä|à|á|â|ą/g, "a");
+  string = string.replace(/е|ẹ|ė|é|è|ê/g, "e");
+  string = string.replace(/і|í|ï|î/g, "i");
+  string = string.replace(/о|ο|օ|ȯ|ọ|ỏ|ơ|ó|ò|ö|ô/g, "o");
+  string = string.replace(/υ|ս|ü|ú|ù|û/g, "u");
+  string = string.replace(/ç/g, "c");
+  string = string.replace(/\s/g, "");
+  return string;
+}
+
+const searchHome = ["home","index","homepage", "inicio", "paginainicial", "inicial", "comeco"];
+const searchLogin = ["login", "enter", "entrar", "conta", "minhaconta", "carregar", "admin"];
+const searchNovoProduto = ["novo", "new", "criar", "novoproduto", "criarproduto", "criarnovoproduto"];
+const searchListaProduto = ["lista", "listagem", "produtos", "verprodutos", "verproduto"];
+let searchProduto = (() => {
+  let tempArr = [];
+  for(let i = 0; i < productListArray._productList.length; i++) {
+    tempArr.push(translateString(productListArray._productList[i]._name));
+  }
+  return tempArr;
+})();
