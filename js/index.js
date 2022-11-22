@@ -35,7 +35,7 @@ function indexMainGenerator(productArray) {
     <section class="principal__secoes">
       <div class="secoes__header">
         <h2 class="secoes__titulo">${productArray._categoryList[i][0]._category}</h2>
-        <a href="../html/lista_produtos.html" class="secoes__link">Ver tudo</a>
+        <a href="html/lista_produtos.html" class="secoes__link">Ver tudo</a>
       </div>
 
       <section class="secoes__container">${productViewIndex[i]}</section>
