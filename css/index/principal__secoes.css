@@ -46,7 +46,7 @@
 
     .container__cartao {
       display: inline-block;
-      width: 45%;
+      width: calc(50% - 2.1rem);
       height: auto;
       background-color: var(--color__background--header);
       margin-bottom: 3.333vw;

@@ -46,6 +46,7 @@ ${(() => {
 // Barra de pesquisa mobile
 const mobileSearchButton = $("header>button");
 const mobileSearchInput = $(".label__campo");
+const desktopSearchInput = $(".pesquisa-container__input");
 const searchfield = $(".mobile__pesquisa");
 const searchButton = $(".pesquisa__botao");
 mobileSearchButton.addEventListener("click", event => {
@@ -70,25 +71,25 @@ mobileSearchButton.addEventListener("click", event => {
   
 });
 
-function searchInput() {
+function searchInput(input) {
   // Pesquisa
   switch(true) {
-    case(mobileSearchInput.value === ""):
+    case(input.value === ""):
       alert("Você não inseriu nada...");
       break;
-    case(searchHome.includes(translateString(mobileSearchInput.value))):
+    case(searchHome.includes(translateString(input.value))):
       window.location.href = "../index.html";
       break;
-    case(searchLogin.includes(translateString(mobileSearchInput.value))):
+    case(searchLogin.includes(translateString(input.value))):
       window.location.href = "../html/login.html";  
       break;
-    case(searchNovoProduto.includes(translateString(mobileSearchInput.value))):
+    case(searchNovoProduto.includes(translateString(input.value))):
       window.location.href = "../html/novo_produto.html";  
       break;
-    case(searchListaProduto.includes(translateString(mobileSearchInput.value))):
+    case(searchListaProduto.includes(translateString(input.value))):
       window.location.href = "../html/lista_produtos.html";  
       break;
-    case(searchProduto.includes(translateString(mobileSearchInput.value))):
+    case(searchProduto.includes(translateString(input.value))):
       //window.location.href = "../html/produto.html";  
       break;
     default:
@@ -99,7 +100,12 @@ function searchInput() {
 searchButton.addEventListener("click", searchInput);
 mobileSearchInput.addEventListener("keyup", event => {
   if(event.key === "Enter") {
-    searchInput();
+    searchInput(mobileSearchInput);
+  }
+});
+desktopSearchInput.addEventListener("keyup", event => {
+  if(event.key === "Enter") {
+    searchInput(desktopSearchInput);
   }
 });
 

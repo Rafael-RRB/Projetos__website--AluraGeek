@@ -109,8 +109,11 @@ if(sessionStorage.getItem("login") === null) {
 addEventListenerForm(labelFooterMSG, labelFooterMSG.querySelector("textarea"), "focusout", condFooterMessage, formFooterDefaultMsg[2], msgErrorFooterMessage, msgFooterSuccess[2]);
 buttonFooterForm.addEventListener("click", (event) => {
   event.preventDefault();
+  console.log("footer click");
   labelFooterInputName = labelFooterName.querySelector("input").value;
   labelFooterInputMSG = labelFooterMSG.querySelector("textarea").value;
+  console.log(testRegex(labelFooterInputName, condFooterName));
+  console.log(labelFooterInputMSG);
   if(testRegex(labelFooterInputName, condFooterName) && testRegex(labelFooterInputMSG, condFooterMessage)) {
     if(sessionStorage.getItem("login") === null) {
       var labelFooterEmail = labelFooterList[(labelFooterList.length-2)];

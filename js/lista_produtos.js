@@ -154,3 +154,7 @@ for(let i = 0; i < linkViewProduct.length; i++) {
     window.location.href = "../html/produto.html";
   });
 }
+
+if(sessionStorage.getItem("login") === null) {
+  $(".heading__botao").remove();
+}

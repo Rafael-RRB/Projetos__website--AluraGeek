@@ -13,7 +13,8 @@ const $$ = document.querySelectorAll.bind(document);
 const regexHREF = new RegExp([
   "\/index\.html$",
   "\/lista_produtos\.html$",
-  "\/novo_produto\.html$"].join("|"), "i");
+  "\/novo_produto\.html$",
+  "\/login\.html$"].join("|"), "i");
 const regexHREFLogin = /\/login\.html$/;
 // Variável para alterar o SRC dos Anchors do cabeçalho e rodapé
 if(!/\b\/index\.html\b/.test(hrefDocument)) {
