@@ -1,15 +1,1 @@
-class productList {
-  constructor() {
-    this._productList = [];
-  }
-
-  addProduct(product) {
-    this._productList.push(product);
-    localStorage.setItem("productListArray", JSON.stringify(this._productList));
-  }
-
-  editProduct(product, index) {
-    this._productList[index] = product;
-    localStorage.setItem("productListArray", JSON.stringify(this._productList));
-  }
-}
+class productList{constructor(){this._productList=[]}addProduct(t){this._productList.push(t),localStorage.setItem("productListArray",JSON.stringify(this._productList))}editProduct(t,s){this._productList[s]=t,localStorage.setItem("productListArray",JSON.stringify(this._productList))}}

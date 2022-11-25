@@ -1,0 +1,39 @@
+@media screen and (min-width:428px) {
+
+}
+
+@media screen and (min-width:728px) {
+  .principal__login {
+    flex-direction: column;
+  }
+  
+    .login__titulo {}
+  
+    .login__formulario {
+      width: 70%;
+    }
+  
+      .login__formulario > button {}
+}
+
+@media screen and (min-width:1024px) {
+
+}
+
+@media screen and (min-width:1280px) {
+  .principal__login {
+    width: 100%;
+  }
+  
+    .login__titulo {}
+  
+    .login__formulario {
+      width: 50%;
+    }
+  
+      .login__formulario > button {}
+}
+
+@media screen and (min-width:1920px) {
+
+}

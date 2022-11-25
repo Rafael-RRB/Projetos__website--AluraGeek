@@ -1,6 +1,1 @@
-class login {
-  constructor(email, pwd) {
-    this._email = email;
-    this._pwd = pwd;
-  }
-}
+class login{constructor(s,i){this._email=s,this._pwd=i}}

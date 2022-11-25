@@ -1,0 +1,66 @@
+.principal__login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5rem 0 0 0;
+}
+
+  .login__titulo {
+    margin: 0rem 0rem 2rem 0rem;
+    font-size: 2rem;
+    color: var(--color__font--default);
+  }
+
+  .login__formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding-bottom: 3.5rem;
+  }
+
+@media screen and (min-width:428px) {
+
+}
+
+@media screen and (min-width:728px) {
+  .principal__login {
+    width: 80%;
+    flex-direction: row;
+    padding: 2.5rem 0 1rem 0;
+    margin: auto;
+  }
+  
+    .login__titulo {}
+  
+    .login__formulario {
+      width: 45%;
+      padding-bottom: 0;
+    }
+  
+      .login__formulario > button {}
+}
+
+@media screen and (min-width:1024px) {
+
+}
+
+@media screen and (min-width:1280px) {
+  .principal__login {
+    width: 65%;
+    padding: 7rem 0 5.5rem 0;
+  }
+  
+    .login__titulo {}
+  
+    .login__formulario {
+      width: 45%;
+    }
+  
+      .login__formulario > button {}
+}
+
+@media screen and (min-width:1920px) {
+
+}

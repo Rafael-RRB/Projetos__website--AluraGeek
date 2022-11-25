@@ -1,9 +1,1 @@
-class product {
-  constructor(img, category, name, price, description) {
-    this._img = img;
-    this._category = category;
-    this._name = name;
-    this._price = price;
-    this._description = description;
-  }
-}
+class product{constructor(t,i,s,c,r){this._img=t,this._category=i,this._name=s,this._price=c,this._description=r}}
