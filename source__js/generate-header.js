@@ -79,27 +79,49 @@ function searchInput(input) {
     return tempArr;
   })();
   // Pesquisa
+  let regexIndex = /\/index\.html$/g;
+  let hrefLocation = window.location.href;
   switch(true) {
     case(input.value === ""):
       alert("Você não inseriu nada...");
       break;
     case(searchHome.includes(translateString(input.value))):
-      window.location.href = "../index.html";
+      if(regexIndex.test(hrefLocation)) {
+        window.location.href = "index.html";
+      } else {
+        window.location.href = "../index.html";
+      }
       break;
     case(searchLogin.includes(translateString(input.value))):
-      window.location.href = "../html/login.html";  
+      if(regexIndex.test(hrefLocation)) {
+        window.location.href = "html/login.html";  
+      } else {
+        window.location.href = "login.html";  
+      }
       break;
     case(searchNovoProduto.includes(translateString(input.value))):
-      window.location.href = "../html/novo_produto.html";  
+      if(regexIndex.test(hrefLocation)) {
+        window.location.href = "html/novo_produto.html";  
+      } else {
+        window.location.href = "novo_produto.html";  
+      }
       break;
     case(searchListaProduto.includes(translateString(input.value))):
-      window.location.href = "../html/lista_produtos.html";  
+      if(regexIndex.test(hrefLocation)) {
+        window.location.href = "html/lista_produtos.html";
+      } else {
+        window.location.href = "lista_produtos.html";
+      }
       break;
     case(searchProduto.includes(translateString(input.value))):
-      //window.location.href = "../html/produto.html";  
+      if(regexIndex.test(hrefLocation)) {
+        window.location.href = "html/produto.html"; 
+      } else {
+        window.location.href = "produto.html"; 
+      }
       break;
     default:
-      alert("Nenhum resultado foi encontrado. Por favor, tente novamente.");
+      alert("Nenhum resultado foi encontrado. Por favor, tente outro termo.");
   }
 }
 

@@ -12,8 +12,13 @@ productListMain.innerHTML = (() => {
           if(!(JSON.parse(sessionStorage.getItem("login")) === null)) {
             if(JSON.parse(sessionStorage.getItem("login")).login === true) {
               return `
-              <button href="#" class="imagem__deletar"></button>
-              <a href="#" class="imagem__editar"></a>
+              <button href="#" class="imagem__deletar">
+                <span class="hide-text">Deletar produto</span>
+              </button>
+              
+              <a href="#" class="imagem__editar">
+                <span class="hide-text">Editar produto.</span>
+              </a>
               `
             }
           } else {

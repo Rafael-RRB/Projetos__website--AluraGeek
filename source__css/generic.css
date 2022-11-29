@@ -71,6 +71,10 @@ html {
   scroll-behavior: smooth;
 }
 
+label>p {
+  font-size: 12px;
+}
+
 .principal {
   background-color: var(--color__background--main);
   padding-top: 7rem;
